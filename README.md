@@ -1,82 +1,77 @@
-FinGen: AI-Powered Portfolio News Digest
-FinGen is a robust, full-stack application designed to cut through financial market noise. It tracks a user-defined portfolio of stocks, automatically fetches relevant news, and employs Generative AI (Gemini API) to produce concise, structured news summaries, sentiment analysis, and impact ratings.
+⚡ FinGen Digest: AI-Powered Portfolio News Summarizer
 
-This project is a demonstration of real-time data integration, scalable cloud persistence, and advanced front-end development, showcasing expertise developed in previous projects like Fibucks and the REAL TIME AUDIO ENABLED SYSTEM.
+FinGen Digest is a modern, full-stack application built using React that leverages the Gemini API for structured data extraction and Firebase Firestore for persistent user data. It simulates a crucial workflow for financial analysts by providing instant, AI-driven summaries and sentiment analysis for news relevant to a user's portfolio.
 
-✨ Core Features Implemented
-AI-Driven Summarization: Leverages the Gemini API with structured output (JSON schema) to transform raw financial articles into standardized summaries, sentiment scores (Positive, Negative, Neutral), and impact ratings (Low, Medium, High).
+✨ Key Features
 
-Persistent Portfolio Management: Uses Google Firestore for real-time tracking of user-defined stock tickers, ensuring data persistence across sessions.
+AI Structured Summarization: Utilizes the Gemini API to analyze raw text content and generate a strictly valid JSON response, containing:
 
-Interactive Sentiment Filtering: Implements client-side logic to filter the news digest by sentiment (Positive, Negative, Neutral, All), showcasing data interpretation and responsive UI development.
+A concise, 1-2 sentence Summary.
 
-Data Visualization Mockup: Includes a responsive Portfolio Performance Widget with a line chart mockup (built with inline SVG) to display value and daily return, demonstrating strong Data Visualization skills.
+An objective Sentiment classification (POSITIVE, NEGATIVE, NEUTRAL).
 
-Responsive Full-Stack Design: Built as a single-page application using React and Tailwind CSS for a clean, mobile-first user experience.
+An anticipated market Impact rating (Low, Medium, High).
 
-💻 Technical Stack
-Component
+Persistent Portfolio Management: Users can add and remove stock tickers (e.g., GOOG, AAPL) to their personalized portfolio. This data is securely stored and synchronized in real-time using Firebase Firestore.
+
+Real-Time Digest: Generated news digests are stored in Firestore, ensuring persistence across sessions and seamless real-time updates for the user.
+
+Responsive UI: A clean, professional financial interface built with React and styled using Tailwind CSS.
+
+Robust API Handling: Implements an exponentialBackoffFetch utility to ensure reliable communication with the Gemini API, gracefully handling potential rate limiting and network issues.
+
+⚙️ Technology Stack
+
+Category
 
 Technology
 
-Rationale & Resume Relevance
+Purpose
 
 Frontend
 
-React, TypeScript, Tailwind CSS
+React (Hooks & Functional Components)
 
-Demonstrates expertise in modern web development frameworks and responsive design (aligns with React, Next.js, and Application Developer roles).
+Component-based UI development and state management.
 
-Data Persistence
+Styling
 
-Google Firestore (via Firebase)
+Tailwind CSS (CDN)
 
-Showcases proficiency in cloud services, real-time data listeners (onSnapshot), and building scalable, user-specific data structures.
+Utility-first styling for a professional aesthetic.
 
-AI / NLP
+AI/ML
 
-Google Gemini API (gemini-2.5-flash)
+Gemini API (gemini-2.5-flash-preview-05-20)
 
-Core focus. Used for complex text processing, summarization, and extracting structured analytical data (directly relates to Gemini API experience on resume).
+Structured generation of news summaries, sentiment, and impact analysis via JSON Schema.
 
-Architecture
+Database
 
-Single-Page Application (SPA)
+Firebase Firestore
 
-Clean, modular component architecture using React functional components and hooks.
+Real-time persistence for user portfolios and processed news digests.
 
-🛠️ Setup and How to Run
-This is a single-file, self-contained React application.
+Authentication
 
-Prerequisites
-Node.js and npm/yarn.
+Firebase Auth
 
-Access to a Firebase project for configuration variables (__firebase_config, __initial_auth_token, __app_id).
+Anonymous or Custom Token sign-in for user identity management.
 
-A Gemini API Key (for the summarizeNews function).
+▶️ Workflow & Usage
 
-Local Execution
-Since this app uses global environment variables for Firebase configuration, the simplest way to run and test the full functionality is within a Canvas or similar development environment.
+The application simulates the entire lifecycle of a financial data processing pipeline:
 
-Key Endpoints:
+Add Tickers: Use the My Portfolio panel to add tickers (e.g., GOOG, AAPL, MSFT) to your tracking list. The portfolio is saved to Firestore.
 
-The core functionality (fetching and summarizing news) is exposed via the "Generate News Digest" button, which triggers the following sequence:
+Generate Digest: Click the Generate News Digest button.
 
-Reads the list of tickers from the Firestore portfolios collection.
+Processing Layer (Simulated): The app filters the mock news articles to match your portfolio.
 
-Iterates through mock news articles related to those tickers.
+AI Analysis: Each article's content is sent to the Gemini API, which returns the structured summary, sentiment, and impact.
 
-Calls the Gemini API with the article content and a strict JSON output schema.
+Persistence: The complete processed digest is saved back to your private Firestore collection.
 
-Persists the structured output (Summary, Sentiment, Impact) to the Firestore news_digests collection, triggering a real-time update on the dashboard.
+Display: The Latest AI Digest section updates automatically via the Firestore real-time listener, displaying the structured, high-value summary cards.
 
-🚀 Future Roadmap & Enhancements
-To demonstrate continued feature development and deep technical skills:
-
-Backend Integration (Node/Express): Decouple the AI logic into a dedicated Node.js/Express backend service, showcasing proficiency in REST APIs and server-side logic (aligns with Node/Express/Backend skills).
-
-Real-time Data Source: Replace the MOCK_NEWS_ARTICLES array with integration of a live, third-party financial news API (e.g., using a Cloud Function for scheduled data ingestion).
-
-Advanced Deployment: Define infrastructure using Docker and create CI/CD pipelines (e.g., GitHub Actions) to automate deployment, directly leveraging the CI/CD and Docker skills listed in the resume.
-
-Author: Parth Samir Dalvi | [LinkedIn] | [Portfolio] | [GitHub]
+Note on Data: The underlying news data is currently mocked (only articles for GOOG, AAPL, and MSFT exist). However, the entire AI processing and storage pipeline using the Gemini API and Firestore is live and functional.
