@@ -1,5 +1,9 @@
 ⚡ FinGen Digest: AI-Powered Portfolio News Summarizer
 
+<img width="895" height="699" alt="image" src="https://github.com/user-attachments/assets/2b37f0e0-d4b9-4757-9d17-c6d93f762b6d" />
+
+
+
 FinGen Digest is a modern, full-stack application built using React that leverages the Gemini API for structured data extraction and Firebase Firestore for persistent user data. It simulates a crucial workflow for financial analysts by providing instant, AI-driven summaries and sentiment analysis for news relevant to a user's portfolio.
 
 ✨ Key Features
